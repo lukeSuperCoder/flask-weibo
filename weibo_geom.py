@@ -112,12 +112,12 @@ def get_weibo_geom_aggregate():
 def get_all_points():
     """获取所有数据的 ID 和经纬度信息"""
     # 只查询有地理信息的记录
-    query = WeiboGeom.query.filter(WeiboGeom.point.isnot(None))
+    query = WeiboGeom.query.filter(WeiboGeom.point.isnot(None)).order_by(WeiboGeom.created_at.desc()).limit(5000)
     
     # 如果指定了 ID，则按 ID 筛选
     if 'id' in request.args:
         query = query.filter(WeiboGeom.id == request.args['id'])
-    
+
     # 获取所有记录
     items = query.all()
     
