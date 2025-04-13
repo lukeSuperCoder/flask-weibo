@@ -22,7 +22,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-服务将在 http://localhost:5000 启动
+服务将在 http://localhost:8006 启动
 
 ## 示例接口
 
